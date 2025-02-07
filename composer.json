@@ -1,0 +1,43 @@
+{
+    "name": "pavelzanek/laravel-gopay-sdk",
+    "type": "library",
+    "description": "GoPay SDK for Laravel",
+    "keywords": [
+        "gopay",
+        "sdk",
+        "laravel"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Pavel Zaněk",
+            "email": "zanek.pavel@gmail.com",
+            "homepage": "https://pavelzanek.cz",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^8.0|^8.1",
+        "illuminate/support": "^8.0|^9.0",
+        "illuminate/config": "^8.0|^9.0",
+        "illuminate/cache": "^8.0|^9.0",
+        "illuminate/container": "^8.0|^9.0",
+        "gopay/payments-sdk-php": "^1.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "PavelZanek\\LaravelGoPaySDK\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "PavelZanek\\LaravelGoPaySDK\\Providers\\GoPayServiceProvider"
+            ],
+            "aliases": {
+                "GoPaySDK": "PavelZanek\\LaravelGoPaySDK\\GoPaySDKFacade"
+            }
+        }
+    }
+}
