@@ -15,7 +15,7 @@ class GoPayServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__.'/../config/gopay.php' => config_path('gopay.php'),
+            __DIR__.'/../../src/config/gopay.php' => config_path('gopay.php'),
         ], 'config');
     }
 
@@ -31,7 +31,7 @@ class GoPayServiceProvider extends ServiceProvider
         }
 
         $this->mergeConfigFrom(
-            __DIR__.'/../config/gopay.php', 'gopay'
+            __DIR__.'/../../src/config/gopay.php', 'gopay'
         );
 
         $this->app->singleton('GoPaySDK', function ($app) {
