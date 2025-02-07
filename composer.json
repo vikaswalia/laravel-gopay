@@ -17,12 +17,13 @@
 		}
 	],
 	"minimum-stability": "dev",
+	"prefer-stable": true,
 	"require": {
 		"php": "^8.0|^8.1|^8.2",
-		"illuminate/support": "^8.0|^9.0|^10.0",
-		"illuminate/config": "^8.0|^9.0|^10.0",
-		"illuminate/cache": "^8.0|^9.0|^10.0",
-		"illuminate/container": "^8.0|^9.0|^10.0",
+		"illuminate/support": "^10.0",
+		"illuminate/config": "^10.0",
+		"illuminate/cache": "^10.0",
+		"illuminate/container": "^10.0",
 		"gopay/payments-sdk-php": "^1.4"
 	},
 	"autoload": {
