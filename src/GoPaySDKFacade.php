@@ -1,6 +1,6 @@
 <?php
 
-namespace PavelZanek\LaravelGoPaySDK;
+namespace VikasWalia\LaravelGoPay;
 
 use Illuminate\Support\Facades\Facade as LaravelFacade;
 

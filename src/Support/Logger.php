@@ -1,6 +1,6 @@
 <?php
 
-namespace PavelZanek\LaravelGoPaySDK\Support;
+namespace VikasWalia\LaravelGoPay\Support;
 
 use GoPay\Http\Log\Logger as DefLogger;
 use GoPay\Http\Request;

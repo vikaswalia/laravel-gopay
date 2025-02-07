@@ -1,9 +1,9 @@
 <?php
 
-namespace PavelZanek\LaravelGoPaySDK\Providers;
+namespace VikasWalia\LaravelGoPay\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use PavelZanek\LaravelGoPaySDK\GoPaySDK;
+use VikasWalia\LaravelGoPay\GoPaySDK;
 
 class GoPayServiceProvider extends ServiceProvider
 {

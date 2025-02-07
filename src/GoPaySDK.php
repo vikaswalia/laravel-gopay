@@ -1,11 +1,11 @@
 <?php
 
-namespace PavelZanek\LaravelGoPaySDK;
+namespace VikasWalia\LaravelGoPay;
 
 use GoPay;
-use PavelZanek\LaravelGoPaySDK\Events\PaymentCreated;
-use PavelZanek\LaravelGoPaySDK\Support\LaravelTokenCache;
-use PavelZanek\LaravelGoPaySDK\Support\Logger;
+use VikasWalia\LaravelGoPay\Events\PaymentCreated;
+use VikasWalia\LaravelGoPay\Support\LaravelTokenCache;
+use VikasWalia\LaravelGoPay\Support\Logger;
 
 class GoPaySDK
 {

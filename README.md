@@ -1,6 +1,5 @@
 # GoPay SDK for Laravel
 
-
 - [GoPay SDK for Laravel](#gopay-sdk-for-laravel)
   - [Requirements](#requirements)
   - [Installation](#installation)
@@ -26,7 +25,7 @@ The GoPay SDK for Laravel package requires PHP 8.0+, Laravel 8+.
 Add the package in your composer.json by executing the command:
 
 ```
-composer require pavelzanek/laravel-gopay-sdk
+composer require vikaswalia/laravel-gopay
 ```
 
 This command installs the package into the vendor/ directory.
@@ -36,10 +35,10 @@ This command installs the package into the vendor/ directory.
 You can initialise config file by running command:
 
 ```
-php artisan vendor:publish --provider="PavelZanek\LaravelGoPaySDK\Providers\GoPayServiceProvider" --tag="config"
+php artisan vendor:publish --provider="Vikaswalia\LaravelGoPay\Providers\GoPayServiceProvider" --tag="config"
 ```
 
-Next, you can see newly created file located in `config` folder - `gopay.php`. 
+Next, you can see newly created file located in `config` folder - `gopay.php`.
 
 By default, the config file looks like this
 
@@ -51,9 +50,9 @@ return [
     'clientId' => env('GOPAY_CLIENT_ID'),
     'clientSecret' => env('GOPAY_CLIENT_SECRET'),
     'defaultScope' => env('GOPAY_DEFAULT_SCOPE', 'ALL'),
-    'gatewayUrl' => env('GOPAY_PRODUCTION_ENV', true) ? 
+    'gatewayUrl' => env('GOPAY_PRODUCTION_ENV', true) ?
         'https://gate.gopay.cz/' : 'https://gw.sandbox.gopay.com/',
-    'languages' => [ 
+    'languages' => [
         'en' => 'ENGLISH',
         'sk' => 'SLOVAK',
         'cs' => 'CZECH'
@@ -71,16 +70,19 @@ Basic variables can be set in .env file.
 You can set up payment gateway interface language when you creating new payment.
 
 Via GoPay Definition
+
 ```php
 \GoPaySDK::lang(GoPay\Definition\Languages::CZECH)
 ```
 
 Via Language Code
+
 ```php
 \GoPaySDK::lang('cs')
 ```
 
 Via String
+
 ```php
 \GoPaySDK::lang('CZECH')
 ```
@@ -88,23 +90,25 @@ Via String
 ### Scopes
 
 Via GoPay Definition
+
 ```php
 \GoPaySDK::scope(GoPay\Definition\TokenScope::CREATE_PAYMENT)
 ```
 
 Via String
+
 ```php
 \GoPay::scope('CREATE_PAYMENT')
 ```
 
 ### Events
 
-|  **Name**      |                     **Class**                    |
-|:--------------:|:------------------------------------------------:|
-| PaymentCreated | PavelZanek\LaravelGoPaySDK\Events\PaymentCreated |
+|    **Name**    |                    **Class**                     |
+| :------------: | :----------------------------------------------: |
+| PaymentCreated | VikasWalia\LaravelGoPaySDK\Events\PaymentCreated |
 
 ```php
-Event::listen(\PavelZanek\LaravelGoPaySDK\Events\PaymentCreated::class, function ($event) {
+Event::listen(\Vikaswalia\LaravelGoPay\Events\PaymentCreated::class, function ($event) {
     dd($event->payment);
 });
 ```
@@ -138,7 +142,7 @@ class OrdersController extends Controller
     });
 
     // You can use https://doc.gopay.com/#payment-creation
-    $response = GoPaySDK::lang(strtoupper($order->locale))->scope('CREATE_PAYMENT')->createPayment([ 
+    $response = GoPaySDK::lang(strtoupper($order->locale))->scope('CREATE_PAYMENT')->createPayment([
       'payer' => [
         'default_payment_instrument' => PaymentInstrument::PAYMENT_CARD,
         'allowed_payment_instruments' => [PaymentInstrument::PAYMENT_CARD],
@@ -226,5 +230,5 @@ if(isset($response->json['state'])){
 
 ## License
 
-Copyright (c) Pavel Zaněk. MIT Licensed,
+Copyright (c) Vikas Walia. MIT Licensed,
 see [LICENSE](LICENSE.md) for details.

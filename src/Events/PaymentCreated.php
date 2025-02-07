@@ -1,6 +1,6 @@
 <?php
 
-namespace PavelZanek\LaravelGoPaySDK\Events;
+namespace VikasWalia\LaravelGoPay\Events;
 
 use GoPay\Http\Response;
 
